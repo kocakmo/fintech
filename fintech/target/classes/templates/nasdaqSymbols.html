@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Top Gainers, Top Losers, and Most Active Traded Tickers</title>
+    <head>
+        <title>Top Gainers, Top Losers, and Most Active Traded Tickers</title>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            tr:hover {
+                background-color: #ddd;
+            }
+        </style>
+    </head>
+</head>
+<body>
+<h2>Top Gainers</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Ticker</th>
+        <th>Price</th>
+        <th>Change Amount</th>
+        <th>Change Percentage</th>
+        <th>Volume</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="ticker : ${topGainers}">
+        <td th:text="${ticker.get('ticker')}"></td>
+        <td th:text="${ticker.get('price')}"></td>
+        <td th:text="${ticker.get('change_amount')}"></td>
+        <td th:text="${ticker.get('change_percentage')}"></td>
+        <td th:text="${ticker.get('volume')}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Top Losers</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Ticker</th>
+        <th>Price</th>
+        <th>Change Amount</th>
+        <th>Change Percentage</th>
+        <th>Volume</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="ticker : ${topLosers}">
+        <td th:text="${ticker.get('ticker')}"></td>
+        <td th:text="${ticker.get('price')}"></td>
+        <td th:text="${ticker.get('change_amount')}"></td>
+        <td th:text="${ticker.get('change_percentage')}"></td>
+        <td th:text="${ticker.get('volume')}"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+<h2>Most Active</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Ticker</th>
+        <th>Price</th>
+        <th>Change Amount</th>
+        <th>Change Percentage</th>
+        <th>Volume</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="ticker : ${mostActive}">
+        <td th:text="${ticker.get('ticker')}"></td>
+        <td th:text="${ticker.get('price')}"></td>
+        <td th:text="${ticker.get('change_amount')}"></td>
+        <td th:text="${ticker.get('change_percentage')}"></td>
+        <td th:text="${ticker.get('volume')}"></td>
+    </tr>
+    </tbody>
+</table>
