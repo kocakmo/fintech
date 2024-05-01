@@ -7,7 +7,7 @@ spring.mail.password=
 Provide app password for the config spring.mail.password
 to send email properly.
 
-Create a finance database in postgres to be able to create tables via ORM.
+Create a #finance database in postgres to be able to create tables via ORM.
 
 Also provide for the following fields
 spring.datasource.username=postgres
